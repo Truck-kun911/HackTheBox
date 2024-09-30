@@ -15,3 +15,6 @@ Notes taken from HTBAcademy
 - Age: 19
 - Gender: Male
 - University: MMU
+<br><br>
+# Contact Me:
+[discord](https://discord.com/channels/@me)
