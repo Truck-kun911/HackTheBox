@@ -16,7 +16,7 @@
 | curl -X POST -d 'username=admin&password=admin' http://<SERVER_IP>:<PORT>/ | Send POST request with POST data |
 |  curl -b 'PHPSESSID=c1nsa6op7vtk7kdis7bcnbadf1' http://<SERVER_IP>:<PORT>/ | set request cookies |
 | curl -X POST -d '{"search":"london"}' -H 'Content-Type: application/json' http://<SERVER_IP>:<PORT>/search.php | Send POST request with JSON data |
-<br><br>
+
 # API
 | Command | Description |
 | --- | --- |
@@ -25,7 +25,7 @@
 | curl -X POST http://<SERVER_IP>:<PORT>/api.php/city/ -d '{"city_name":"HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json' | create entry |
 | curl -X PUT http://<SERVER_IP>:<PORT>/api.php/city/london -d '{"city_name":"New_HTB_City", "country_name":"HTB"}' -H 'Content-Type: application/json' | update entry |
 |  curl -X DELETE http://<SERVER_IP>:<PORT>/api.php/city/New_HTB_City | delete entry |
-<br><br>
+
 # Browser DevTools
 | Shortcut | Description |
 | --- | --- |
