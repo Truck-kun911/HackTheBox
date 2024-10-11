@@ -4,7 +4,7 @@ Welcome to my repository! This repository is basically a collection of my notes 
 [^1]: Take note that I wont be adding all modules into this as I will only be putting the ones I think are important such as commands and etc.
 <br><br>
 - [HTBAcademy](https://github.com/Truck-kun911/HackTheBox/blob/main/HTBAcademy.md)
-- [HTB Machines]()
+- [HTB Machines](https://github.com/Truck-kun911/HackTheBox/blob/main/HTB%20Machines.md)
 
 
 
