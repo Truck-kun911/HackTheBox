@@ -14,7 +14,13 @@ Q1: Run nmap scan on target to find the Apache version running on server
 4. Insert password:nibbles
 5. Check plugin page
 6. Configure My image
-7. Upload a snippet php code to test for code execution![Screenshot 2024-10-13 011500](https://github.com/user-attachments/assets/2904d334-5763-407a-a867-6375b25c6235)<br><br>
-8. 
+7. Upload a snippet php code file to test for code execution![Screenshot 2024-10-13 011500](https://github.com/user-attachments/assets/2904d334-5763-407a-a867-6375b25c6235)<br><br>
+8. Check if we have code execution![Screenshot 2024-10-13 103721](https://github.com/user-attachments/assets/cf7898ff-a332-4b84-b65f-bdbf4d05f912)<br><br>
+9. Edit php file to use the bash reverse shell one-liner![Screenshot 2024-10-13 104552](https://github.com/user-attachments/assets/ce87c292-88a7-41ae-bb67-219eea0e2ff0)<br><br>
+10. 
+
+
+
+
 
 
