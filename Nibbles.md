@@ -11,20 +11,38 @@ Q1: Run nmap scan on target to find the Apache version running on server
 ## Web Footprinting & Initial Foothold
 Q1. Gain a foothold on the target & submit the user.txt flag
 <br><br>
+### Method1
 1. Check with cURL![Screenshot 2024-10-12 223730](https://github.com/user-attachments/assets/dbfeec1d-619d-4b22-865c-e74ea3202246)<br><br>
-2. Check nibbles admin portal page by typing "http://<ip_address>/nibbleblog/admin.php![Screenshot 2024-10-13 002115](https://github.com/user-attachments/assets/4651b226-9402-4553-8ac8-897c03ffdbec)<br><br>
-3. Try out common credential pairs such as username:admin,password:admin<br><br>
-4. Insert password:nibbles<br><br>
-5. Check plugin page<br><br>
-6. Configure My image<br><br>
-7. Upload a snippet php code file to test for code execution![Screenshot 2024-10-13 011500](https://github.com/user-attachments/assets/2904d334-5763-407a-a867-6375b25c6235)<br><br>
-8. Check if we have code execution![Screenshot 2024-10-13 103721](https://github.com/user-attachments/assets/cf7898ff-a332-4b84-b65f-bdbf4d05f912)<br><br>
-9. Edit php file to use the bash reverse shell one-liner![Screenshot 2024-10-15 000403](https://github.com/user-attachments/assets/f2c64752-c331-4b76-995a-40804aeb134f)
+2. Check if there are any accessible pages and directories with gobuster![Screenshot 2024-10-18 232418](https://github.com/user-attachments/assets/7f9fa18a-341b-4d62-b19e-5c1cd2704444)<br><br>
+3. Check nibbles admin portal page by typing "http://<ip_address>/nibbleblog/admin.php![Screenshot 2024-10-13 002115](https://github.com/user-attachments/assets/4651b226-9402-4553-8ac8-897c03ffdbec)<br><br>
+4. Try out common credential pairs such as username:admin,password:admin<br><br>
+5. Only username is correct. Take another look at private page & found a config.xml file<br><br>
+6. Check the file with curl & prettify the output with xmllint![Screenshot 2024-10-18 235555](https://github.com/user-attachments/assets/215886e4-dfb5-4458-bed0-2addcadb2ac2)<br><br>
+7. There's no password but the word "nibbles" is repeated at the title & email notification<br><br>
+8. Try password:nibbles<br><br>
+9. Check plugin page<br><br>
+10. Configure My image<br><br>
+11. Upload a snippet php code file to test for code execution![Screenshot 2024-10-13 011500](https://github.com/user-attachments/assets/2904d334-5763-407a-a867-6375b25c6235)<br><br>
+12. Check if we have code execution![Screenshot 2024-10-18 235951](https://github.com/user-attachments/assets/ff25c3ad-52c5-40ad-a918-db392acd73d9)
 <br><br>
-10. Upload the file again & use a netcat listener in terminal. Afterwards, cURL or browse the image page to execute reverse shell![Screenshot 2024-10-15 000303](https://github.com/user-attachments/assets/3e173c2f-ae29-4987-9761-6929d9dbe057)<br><br>
-11. Use a python one-liner to spawn a pseudo terminal so commands like sudo works![Screenshot 2024-10-15 001126](https://github.com/user-attachments/assets/c17ddfbb-4b89-4a45-be3c-63cede0ba6f0)<br><br>
-12. Browse to /home/nibbler to find the user.txt flag![Screenshot 2024-10-15 001958](https://github.com/user-attachments/assets/d537af41-6737-4ca0-8c17-9131df97853b)
+13. Edit php file to use the bash reverse shell one-liner![Screenshot 2024-10-15 000403](https://github.com/user-attachments/assets/f2c64752-c331-4b76-995a-40804aeb134f)
 <br><br>
+14. Upload the file again & use a netcat listener in terminal. Afterwards, cURL or browse the image page to execute reverse shell![Screenshot 2024-10-19 000124](https://github.com/user-attachments/assets/52ebb438-f22d-4f2f-88b4-b16e8f24d116)
+<br><br>
+15. Use a python one-liner to spawn a pseudo terminal so commands like sudo works![Screenshot 2024-10-19 000244](https://github.com/user-attachments/assets/fba6bde0-13b8-4213-858c-630b3af682ef)
+<br><br>
+16. Browse to /home/nibbler to find the user.txt flag![Screenshot 2024-10-15 001958](https://github.com/user-attachments/assets/d537af41-6737-4ca0-8c17-9131df97853b)
+<br><br>
+### Method2
+1. Start Metasploit by typing "msfconsole"<br><br>
+2. Search for "nibbleblog" & then type "use 0" to load the selected exploit![Screenshot 2024-10-19 002448](https://github.com/user-attachments/assets/5537cf21-7657-4153-96e0-e9fa8004543b)<br><br>
+3. Type "options" to see what other options that needs to be set![Screenshot 2024-10-19 002551](https://github.com/user-attachments/assets/0933273a-ffae-4b15-93cb-6d82a78e0a86)<br><br>
+4. Set the RHOSTS as the target IP & LHOST as the IP of your tun0 adapter![Screenshot 2024-10-19 002845](https://github.com/user-attachments/assets/980c170c-3bd6-4799-998b-3d9ccf706777)<br><br>
+5. Set the username, password & targeturi as the following![Screenshot 2024-10-19 002855](https://github.com/user-attachments/assets/1c45dfc9-a591-4b5e-a4f1-ec49ac2c7c70)<br><br>
+6. Type "run" or "exploit" to gain access![Screenshot 2024-10-19 002949](https://github.com/user-attachments/assets/23542a63-7e87-448c-8b67-6e43951ae656)<br><br>
+7. Go to /home/nibbler to get the user.txt similar to the 1st method<br><br>
+
+
 ## Privilege Escalation
 Q1. Escalate privileges and submit the root.txt flag
 <br><br>
