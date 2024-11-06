@@ -19,7 +19,19 @@
 - Hybrid<br>![Screenshot 2024-11-04 235433](https://github.com/user-attachments/assets/39b77a71-aaa8-43ec-b37f-05ccbf62f26b)
 - Daisy Chain<br>![Screenshot 2024-11-04 235512](https://github.com/user-attachments/assets/54185ec2-116f-4b82-9f75-97c50a91b656)
 # Proxies
-- Forward/Dedicated Proxy:
+## Forward/Dedicated Proxy:
+- server that sits in front of a group of client machines
+- when the client makes a request to a site or service, the server intercepts it and communicates with the web server<br>![Screenshot 2024-11-06 232927](https://github.com/user-attachments/assets/8c16ec23-f811-475b-b3f3-58b1d7994a39)
+## Reverse Proxy:
+- server that sits in front of a web servers
+- forward client requests to those servers<br>![Screenshot 2024-11-06 233451](https://github.com/user-attachments/assets/e7e2a331-c552-4abb-b265-77e802d9c4b7)
+## Transparent Proxy:
+- the client doesn't know about its existence
+- intercepts the client's communication requests to the Internet and acts as a substitute instance
+## Non-Transparent Proxy:
+- we must be informed about its existence
+- we and the software we want to use are given a special proxy configuration that ensures that traffic to the Internet is first addressed to the proxy
+- communication can't be done via proxy if the configuration doesn't exist
 
 
 
