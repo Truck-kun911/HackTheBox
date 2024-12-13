@@ -4,4 +4,4 @@ This is where I posts my notes from both HTB Academy & Machine
 <br><br>
 ## Content
 - [HTB Academy](https://github.com/Truck-kun911/HackTheBox/blob/main/HTBAcademy.md)
-- [HTB Machine]()
+- [HTB Machine](https://github.com/Truck-kun911/HackTheBox/blob/main/HTBMachine.md)
